@@ -3,21 +3,21 @@ import { client } from "../../libs/client";
 import { Blog } from "../../types/blog";
 
 type Props = {
-    articles: Array<Blog>;
+    blogs: Array<Blog>;
   };
 
-export default function CategoryId({ articles }: Props) {
+export default function CategoryId({ blogs }: Props) {
   // カテゴリーに紐付いたコンテンツがない場合に表示
-  if (articles.length === 0) {
+  if (blogs.length === 0) {
     return <div>ブログコンテンツがありません</div>;
   }
   return (
     <div>
       <ul>
-        {articles.map(article => (
-          <li key={article.id}>
-            <Link href={`/blog/${article.id}`}>
-              <a>{article.title}</a>
+        {blogs.map(blog => (
+          <li key={blog.id}>
+            <Link href={`/blog/${blog.id}`}>
+              <a>{blog.title}</a>
             </Link>
           </li>
         ))}
@@ -37,11 +37,11 @@ export const getStaticPaths = async () => {
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async (context: any) => {
   const id = context.params.id;
-  const data = await client.get({ endpoint: "articles", queries: { filters: `tag[equals]${id}` } });
+  const data = await client.get({ endpoint: "blogs", queries: { filters: `tag[equals]${id}` } });
 
   return {
     props: {
-      articles: data.contents,
+      blogs: data.contents,
     },
   };
 };
