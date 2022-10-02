@@ -1,17 +1,25 @@
 import { Session } from "inspector";
 import Link from "next/link";
+import { BsGrid3X3 } from "react-icons/bs";
+import { BiGrid, BiHomeAlt, BiMoon } from "react-icons/bi"
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center p-2 bg-white text-base-content text-sm">
-            <div>
-                <Link href={"/"}>
-                    <p className="text-base">♫ 利用規約</p>
-                </Link>
-                <p>Copyright © 2022 NiFT_Blog</p>
-                <p>All right reserved</p>
-            </div>
-        </footer>
+        <div className="btm-nav h-16 z-50 text-sm">
+            {/* button className = "active" */}
+            <button className="">
+                <BiGrid size={24} color={"#ccc"} />
+                {/* <span className="btm-nav-label">Collections</span> */}
+            </button>
+            <button className="">
+                <BiHomeAlt size={24} color={"#ccc"} />
+                {/* <span className="btm-nav-label">Home</span> */}
+            </button>
+            <button className="">
+                <BiMoon size={24} color={"#ccc"}/>
+                {/* <span className="btm-nav-label">Mode</span> */}
+            </button>
+        </div>
     );
 };
 

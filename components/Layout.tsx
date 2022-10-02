@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 import Footer from "./Footer";
+import Indexs from "./Indexs";
+import Menu from "./Menu";
 import Navbar from "./Navbar";
 import Seo from "./_common/seo";
 
@@ -12,7 +14,9 @@ const Layout = ({ children }: Props) => {
         <>
             <Seo />
             <Navbar />
-            <main className="pt-16">{children}</main>
+            <Menu />
+            <Indexs/>
+            <main className="p-4">{children}</main>
             <Footer />
         </>
     );

@@ -8,11 +8,11 @@ interface MetaData {
 }
 
 const Seo = ({ pageTitle, pageUrl, pageOgImage, noIndex = false }: MetaData) => {
-    const defaultTitle = "nift_blog";
+    const defaultTitle = "Nift_Blog";
     const title = pageTitle ? `${pageTitle} | ${defaultTitle}` : defaultTitle;
     const description = "すべてのNFTを楽しみたい人たちに送る、NFTメディア";
-    const siteName = "nift_blog";
-    const domain = "";
+    const siteName = "NiFT_Blog";
+    const domain = "NiFTBlog";
     const url = pageUrl ? `https://${domain}/${pageUrl}/` : `https://${domain}`;
     const ogImage = pageOgImage || `https://${domain}/ogp.png`;
 
