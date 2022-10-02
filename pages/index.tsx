@@ -15,21 +15,29 @@ export default function Home({ blogs, tag }: Props) {
   return (
     <>
       {/* 投稿一覧 */}
-      <div className="container w-6/12 p-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+      <div className="container w-auto justify-between p-4 grid grid-cols-2 xl:grid-cols-4 gap-5">
+
+        {/* 記事のマッピング */}
         {blogs.map(blog => (
           <div className="rounded overflow-hidden shadow-lg" key={blog.id}>
+
+            {/* 画像の表示 */}
             <Link href={`/blog/${blog.id}`} passHref>
               <img
-                className=""
+                className=" w-fit"
                 src={blog.eyecatch.url}
                 alt="Sunset in the mountains"
               />
             </Link>
+
+            {/* ブログのタイトル */}
             <div className="px-6 py-4">
               <Link href={`/blog/${blog.id}`} passHref>
-               <a>{blog.title}</a>
+                <div className='font-bold'>{blog.title}</div>
               </Link>
             </div>
+
+            {/* タグの表示 */}
             <div className="px-6 pt-4 pb-2">
               {blog.tag && (
                 <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
@@ -37,6 +45,7 @@ export default function Home({ blogs, tag }: Props) {
                 </span>
                 )}
             </div>
+
           </div>
         ))}
       </div>

@@ -15,7 +15,7 @@ const Menu = () => {
                 <Link href={"/おすすめのサービス"}>
                     <button className="btn btn-block bg-black border-none rounded-none text-xs h-2 no-animation text-white">おすすめのサービス</button>
                 </Link>
-                <Link href={"/About US"}>
+                <Link href={"/AboutUS"}>
                     <button className="btn btn-block bg-black border-none rounded-none text-xs h-2 no-animation text-white">About US</button>
                 </Link>
             </div>
