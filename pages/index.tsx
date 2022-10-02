@@ -14,30 +14,13 @@ type Props = {
 export default function Home({ blogs, tag }: Props) {
   return (
     <>
-      <h1 className="container mx-auto px-10 pt-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
-        記事一覧
-      </h1>
-      
-      {/* タグ一覧 */}
-      <div>
-        <ul>
-        {tag.map((tag) => (
-          <li key={tag.id}>
-            <Link href={`/tag/${tag.id}`}>
-              <a>{tag.name}</a>
-            </Link>
-          </li>
-        ))}
-        </ul>
-      </div>
-
       {/* 投稿一覧 */}
-      <div className="container mx-auto p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+      <div className="container w-6/12 p-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
         {blogs.map(blog => (
           <div className="rounded overflow-hidden shadow-lg" key={blog.id}>
             <Link href={`/blog/${blog.id}`} passHref>
               <img
-                className="w-full"
+                className=""
                 src={blog.eyecatch.url}
                 alt="Sunset in the mountains"
               />
