@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import Indexs from "./Indexs";
 import Menu from "./Menu";
 import Navbar from "./Navbar";
-import Seo from "./_common/seo";
+import Seo from "./_common/Seo";
 
 interface Props {
     children: ReactNode;
