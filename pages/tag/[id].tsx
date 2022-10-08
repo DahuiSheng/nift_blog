@@ -1,12 +1,21 @@
 import Link from "next/link";
 import { client } from "../../libs/client";
 import { Blog } from "../../types/blog";
+import * as gtag from '../../libs/gtag';
 
 type Props = {
     blogs: Array<Blog>;
   };
 
 export default function CategoryId({ blogs }: Props) {
+  const ClickEvent = () => {
+    gtag.event({
+      action: 'click_event',
+      category: 'link_button',
+      label: 'event',
+    })
+  }
+  
   // カテゴリーに紐付いたコンテンツがない場合に表示
   if (blogs.length === 0) {
     return <div>ブログコンテンツがありません</div>;
