@@ -9,6 +9,12 @@ type Props = {
 export default function Blog({ blog }: Props) {
   return (
     <>
+      <div className="max-w-6xl py-6 mx-auto bg-zinc-800">
+        {/* ブログのタイトルを表示 */}
+        <div className="sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-white">
+          {blog.title}
+        </div>
+      </div>
       {/* ブログのサムネを表示 */}
       <img
         className="object-cover w-full shadow-sm h-full"
@@ -19,9 +25,9 @@ export default function Blog({ blog }: Props) {
       <div className=" py-6 mx-auto bg-white">
           <div className="max-w-6xl px-3 py-6 mx-auto">
             {/* ブログのタイトルを表示 */}
-            <div className="sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-black">
+            {/* <div className="sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-bold text-black">
               {blog.title}
-            </div>
+            </div> */}
 
             {/* ブログのタグを表示 */}
             {blog.tag && (
@@ -33,7 +39,7 @@ export default function Blog({ blog }: Props) {
             )}
 
             {/* ブログの本文を表示 */}
-            <div className='mt-2 md:px-6'>
+            <div className='mt-2 mb-8 md:px-6'>
               <div dangerouslySetInnerHTML={{
                 __html: `${blog.content}`,
               }}

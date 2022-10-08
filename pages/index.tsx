@@ -15,7 +15,7 @@ export default function Home({ blogs, tag }: Props) {
   return (
     <>
       {/* 投稿一覧 */}
-      <div className="container w-auto justify-between p-4 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
+      <div className="container w-auto justify-between px-4 pt-4 pb-12 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
 
         {/* 記事のマッピング */}
         {blogs.map(blog => (
