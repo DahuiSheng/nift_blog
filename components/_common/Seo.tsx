@@ -12,7 +12,7 @@ const Seo = ({ pageTitle, pageUrl, pageOgImage, noIndex = false }: MetaData) => 
     const title = pageTitle ? `${pageTitle} | ${defaultTitle}` : defaultTitle;
     const description = "すべてのNFTを楽しみたい人たちに送る、NFTメディア";
     const siteName = "NiFT_Blog";
-    const domain = "NiFTBlog";
+    const domain = "nift-blog.vercel.app";
     const url = pageUrl ? `https://${domain}/${pageUrl}/` : `https://${domain}`;
     const ogImage = pageOgImage || `https://${domain}/ogp.png`;
 
